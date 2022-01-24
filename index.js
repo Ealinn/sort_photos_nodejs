@@ -20,3 +20,19 @@ var getFiles = function (dir, files_){
 var files = getFiles('/Users/ealinn/Samsung_S10_lite');
 
 
+fs.readFile(files[305], function (err, data) {
+  if (err) {
+    throw err;
+  }
+  else {
+    exif.metadata(data, function (err, metadata) {
+      if (err) {
+        throw err;
+      }
+      else {
+        console.log(metadata);
+      }
+    });
+  }
+});
+
